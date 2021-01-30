@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CourseCard = ({ imgUrl, title, description }) => {
+const CourseCard = ({ imgUrl, title, id, creator, description }) => {
   return (
     <div className="col s12 m4">
       <div className="card ">
@@ -13,6 +13,7 @@ const CourseCard = ({ imgUrl, title, description }) => {
             {title}
             <i className="material-icons right">more_vert</i>
           </span>
+          <h6>{creator}</h6>
           <p>{description}</p>
         </div>
         <div className="card-reveal">
@@ -21,7 +22,7 @@ const CourseCard = ({ imgUrl, title, description }) => {
             <i className="material-icons right">close</i>
           </span>
           <p>{description}</p>
-          <Link to="/course">Open Course</Link>
+          <Link to={`/course/${id}`}>Open Course</Link>
         </div>
       </div>
     </div>

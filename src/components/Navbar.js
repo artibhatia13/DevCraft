@@ -41,7 +41,7 @@ const Navbar = ({ isLoggedIn }) => {
                 menu
               </i>
             </a>
-            <Link to="/" class="brand-logo left">
+            <Link to="/" class="brand-logo left hide-on-med-and-down">
               <span style={{ color: "#c33427" }}>Byte</span>Space
             </Link>
             <div
