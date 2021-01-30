@@ -6,11 +6,7 @@ const CourseCard = ({ imgUrl, title, description }) => {
     <div className="col s12 m4">
       <div className="card ">
         <div className="card-image waves-effect waves-block waves-light">
-          <img
-            className="activator responsive-img"
-            src="https://materializecss.com/images/office.jpg"
-            alt=""
-          />
+          <img className="activator responsive-img" src={imgUrl} alt="" />
         </div>
         <div className="card-content">
           <span className="card-title activator grey-text text-darken-4">
