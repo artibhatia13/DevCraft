@@ -2,8 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { HashLink as HLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import { useAuth } from '../contexts/AuthContext'
 
-const Navbar = ({ isLoggedIn }) => {
+
+const Navbar = () => {
+  const { currentUser } = useAuth()
+
   const sidenavRef = useRef();
   const [sidenavInstance, setSidenavInstance] = useState(null);
 
@@ -15,7 +19,7 @@ const Navbar = ({ isLoggedIn }) => {
     );
   }, []);
 
-  const links = isLoggedIn
+  const links = currentUser!==null
     ? [
         { id: 1, Name: "Dashboard", to: "/dashboard" },
         { id: 3, Name: "Play", to: "/play" },
@@ -41,8 +45,8 @@ const Navbar = ({ isLoggedIn }) => {
                 menu
               </i>
             </a>
-            <Link to="/" class="brand-logo left">
-              <span style={{ color: "#c33427" }}>Byte</span>Space
+            <Link to="/" class="brand-logo left blue">
+              ByteSpace
             </Link>
             <div
               className="hide-on-large-only black-text "

@@ -42,7 +42,6 @@ export default function ForgotPassword() {
                 <TextField
                     type="email"
                     label="Email"
-                    variant="outlined"
                     required
                     onChange={(e) => setEmail(e.target.value)}
                 /><br /><br />
