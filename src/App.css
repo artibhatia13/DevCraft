@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 .App {
   text-align: center;
+  font-family: Roboto;
 }
+.brand-logo{
+  color:black !important;
+}
+.landing{
+  margin: 10em auto;
+  padding: 2em;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.btn {
+  height:4em !important;
+  width:10em !important;
+  padding: 0.8em !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  transition: 0.5s !important;
+  background-size: 200% auto !important;
+  color: white !important;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2) !important;*/
+  box-shadow: 0 0 20px #eee !important;
+  border-radius: 10px !important;
+  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%) !important;
+}
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+}
+
