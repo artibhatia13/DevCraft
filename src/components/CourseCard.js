@@ -9,6 +9,7 @@ const CourseCard = ({
   description,
   handleEnroll,
   enrolled,
+  hideEnroll = false,
 }) => {
   return (
     <div className="col s12 m4">
@@ -32,9 +33,11 @@ const CourseCard = ({
           <p>{description}</p>
           <Link to={`/course/${id}`}>Open Course</Link>
           <br />
-          <div onClick={() => handleEnroll(id)} className="btn">
-            {enrolled ? <p>UnEnroll</p> : <p>Enroll</p>}
-          </div>
+          {!hideEnroll && (
+            <div onClick={() => handleEnroll(id)} className="btn">
+              {enrolled ? <p>UnEnroll</p> : <p>Enroll</p>}
+            </div>
+          )}
         </div>
       </div>
     </div>
