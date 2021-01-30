@@ -8,6 +8,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "John Doe",
+    enrolled: false,
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "Mary Doe",
+    enrolled: false,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "Charlie Doe",
+    enrolled: false,
   },
   {
     id: 4,
@@ -29,6 +32,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "Someone Doe",
+    enrolled: false,
   },
   {
     id: 5,
@@ -36,6 +40,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "John Doe",
+    enrolled: false,
   },
   {
     id: 6,
@@ -43,6 +48,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "John Doe",
+    enrolled: false,
   },
   {
     id: 7,
@@ -50,6 +56,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "John Doe",
+    enrolled: false,
   },
   {
     id: 8,
@@ -57,6 +64,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "John Doe",
+    enrolled: false,
   },
   {
     id: 9,
@@ -64,6 +72,7 @@ const data = [
     imgUrl: "https://materializecss.com/images/office.jpg",
     description: sampleText,
     creator: "John Doe",
+    enrolled: false,
   },
 ];
 export default data;
