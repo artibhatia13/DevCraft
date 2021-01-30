@@ -53,7 +53,6 @@ export default function UpdateProfile() {
                 <TextField
                     type="email"
                     label="Email"
-                    variant="outlined"
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 /><br /><br />
@@ -61,14 +60,12 @@ export default function UpdateProfile() {
                     type="password"
                     label="Password"
                     helperText="leave blank to keep the same"
-                    variant="outlined"
                     onChange={(e) => setPassword(e.target.value)}
                 /><br /><br />
                 <TextField
                     type="password"
                     label="Confirm Password"
                     helperText="leave blank to keep the same"
-                    variant="outlined"
                     onChange={(e) => setPassword2(e.target.value)}
                 /><br /><br />
                 <Button variant="contained" disabled={loading} type="submit" >Update</Button>

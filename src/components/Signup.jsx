@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { Alert } from '@material-ui/lab';
 import { Container, TextField, Button } from '@material-ui/core/';
@@ -14,6 +14,7 @@ export default function Signup() {
 
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -26,6 +27,7 @@ export default function Signup() {
             setError("")
             setLoading(true)
             await signup(email, password)
+            history.push("/")
         } catch {
             setError("Failed to create an account")
         }
@@ -43,21 +45,18 @@ export default function Signup() {
                 <TextField 
                     type="email" 
                     label="Email" 
-                    variant="outlined" 
                     onChange={(e)=>setEmail(e.target.value)}
                     required
                 /><br /><br />
                 <TextField 
                     type="password" 
                     label="Password" 
-                    variant="outlined" 
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 /><br /><br />
                 <TextField 
                     type="password" 
                     label="Confirm Password" 
-                    variant="outlined" 
                     onChange={(e) => setPassword2(e.target.value)}
                     required
                 /><br /><br />

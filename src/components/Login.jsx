@@ -1,17 +1,19 @@
-import React,{ useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React,{ useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
 import { Alert } from '@material-ui/lab';
 import { Container, TextField, Button } from '@material-ui/core/';
 import { useAuth } from '../contexts/AuthContext'
 
 export default function Login() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const { login } = useAuth
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const { login } = useAuth()
 
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -19,7 +21,8 @@ export default function Login() {
         try {
             setError("")
             setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
+            await login(email, password)
+            history.push("/")
         } catch {
             setError("Failed to Log in")
         }
@@ -37,18 +40,19 @@ export default function Login() {
                 <TextField
                     type="email"
                     label="Email"
-                    variant="outlined"
-                    ref={emailRef}
                     required
+                    onChange={(e) => setEmail(e.target.value)}
                 /><br /><br />
                 <TextField
                     type="password"
                     label="Password"
-                    variant="outlined"
-                    ref={passwordRef}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                 /><br /><br />
-                <Button variant="contained" disabled={loading} type="submit" >Sign Up</Button>
+                <Button variant="contained" disabled={loading} type="submit" >Log In</Button>
+                <div className="forgotPassword">
+                    <Link to="/forgotpassword">forgot password?</Link>
+                </div>
             </form>
             <p>Don't have an account ?<Link to="/signup">Sign Up</Link></p>
         </Container>
