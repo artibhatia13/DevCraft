@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CourseCard = ({ imgUrl, title, id, creator, description }) => {
+const CourseCard = ({
+  imgUrl,
+  title,
+  id,
+  creator,
+  description,
+  handleEnroll,
+  enrolled,
+}) => {
   return (
     <div className="col s12 m4">
       <div className="card ">
@@ -23,6 +31,10 @@ const CourseCard = ({ imgUrl, title, id, creator, description }) => {
           </span>
           <p>{description}</p>
           <Link to={`/course/${id}`}>Open Course</Link>
+          <br />
+          <div onClick={() => handleEnroll(id)} className="btn">
+            {enrolled ? <p>UnEnroll</p> : <p>Enroll</p>}
+          </div>
         </div>
       </div>
     </div>

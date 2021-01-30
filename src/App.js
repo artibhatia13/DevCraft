@@ -9,11 +9,10 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import CoursePage from "./components/CoursePage";
-import PrivateRoute from "./components/PrivateRoute"
-import ForgotPassword from './components/ForgotPassword'
-import UpdateProfile from "./components/UpdateProfile"
-//import CourseCard from "./components/CourseCard";
-import Profile from './components/Profile'
+import PrivateRoute from "./components/PrivateRoute";
+import ForgotPassword from "./components/ForgotPassword";
+import UpdateProfile from "./components/UpdateProfile";
+import Profile from "./components/Profile";
 
 function App() {
   return (

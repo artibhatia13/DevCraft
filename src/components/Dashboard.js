@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "../contexts/AuthContext";
 import data from "../tempData";
 import CourseCard from "./CourseCard";
 import SearchBar from "./SearchBar";
 
-const Dashboard = ({ allCourses, setAllCourses }) => {
-  console.log(allCourses);
+const Dashboard = () => {
+  const { allCourses, setAllCourses } = useAuth();
   const [courses, setCourses] = useState(allCourses);
 
   const handleSearchQuery = (searchTerm) => {
@@ -17,6 +18,7 @@ const Dashboard = ({ allCourses, setAllCourses }) => {
   const handleEnroll = (id) => {
     const newCourseList = allCourses.map((course) => {
       if (course.id === id) {
+        console.log("id found");
         return {
           ...course,
           enrolled: !course.enrolled,
@@ -25,6 +27,10 @@ const Dashboard = ({ allCourses, setAllCourses }) => {
     });
     setAllCourses(newCourseList);
   };
+
+  useEffect(() => {
+    setCourses(allCourses);
+  }, [allCourses]);
 
   return (
     <div className="dashboard container">
@@ -35,7 +41,11 @@ const Dashboard = ({ allCourses, setAllCourses }) => {
       <div className="courses row">
         {courses.length ? (
           courses.map((course) => (
-            <CourseCard handleEnroll={handleEnroll} {...course} />
+            <CourseCard
+              key={course.id}
+              handleEnroll={handleEnroll}
+              {...course}
+            />
           ))
         ) : (
           <div className="">
