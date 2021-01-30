@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
+import CourseCard from "./components/CourseCard";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);

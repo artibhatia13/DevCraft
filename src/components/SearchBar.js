@@ -5,8 +5,7 @@ const SearchBar = ({ placeholder, handleSearchQuery }) => {
     <div
       className="searchbar center"
       style={{
-        marginLeft: 50,
-        marginRight: 50,
+        margin: 50,
         marginTop: 20,
         display: "flex",
         justifyContent: "center",

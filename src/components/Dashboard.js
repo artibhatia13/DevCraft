@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import data from "../tempData";
+import CourseCard from "./CourseCard";
 import SearchBar from "./SearchBar";
 
 const Dashboard = () => {
-  const handleSearchQuery = (searchTerm) => {};
+  const [courses, setCourses] = useState(data);
 
-  const courses = [
-    { id: 1, name: "Super advanced mechanics" },
-    { id: 2, name: "Calculus for dummies" },
-    { id: 3, name: "Mechanics the way like it!" },
-    { id: 4, name: "Game Dev 101" },
-    { id: 5, name: "Sophisticated algoritms to make you cry" },
-  ];
+  const handleSearchQuery = (searchTerm) => {
+    const filteredCourses = data.filter(({ title }) =>
+      title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setCourses(filteredCourses);
+  };
 
   return (
-    <div className="dashboard">
+    <div className="dashboard container">
       <SearchBar
         placeholder="Search for courses"
         handleSearchQuery={handleSearchQuery}
       />
-      <div className="courses">
-        {courses.map((course) => (
-          <div className="card" key={course.id}>
-            {course.name}
+      <div className="courses row">
+        {courses.length ? (
+          courses.map((course) => <CourseCard {...course} />)
+        ) : (
+          <div className="">
+            <p>Sorry! No coures available as per your entered query</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
