@@ -38,14 +38,14 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar-fixed  ">
-        <nav className="nav-wrapper z-depth-0 teal nav_img">
+        <nav className="nav-wrapper z-depth-3 white nav_img">
           <div className="container">
             <a href="#" data-target="mobile-nav" className="sidenav-trigger">
               <i className="material-icons" style={{ color: "#C33427" }}>
                 menu
               </i>
             </a>
-            <Link to="/" class="brand-logo left blue">
+            <Link to="/" class="brand-logo left">
               ByteSpace
             </Link>
             <div
