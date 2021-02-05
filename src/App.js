@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import "materialize-css/dist/css/materialize.min.css";
@@ -13,6 +12,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./components/ForgotPassword";
 import UpdateProfile from "./components/UpdateProfile";
 import Profile from "./components/Profile";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/forgotpassword" component={ForgotPassword} />
             <Route path="/course/:courseId" component={CoursePage} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </AuthProvider>
