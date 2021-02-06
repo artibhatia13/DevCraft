@@ -35,7 +35,7 @@ const CourseCard = ({
           <br />
           {!hideEnroll && (
             <div onClick={() => handleEnroll(id)} className="btn">
-              {enrolled ? <p>UnEnroll</p> : <p>Enroll</p>}
+              {enrolled ? "UnEnroll" : "Enroll"}
             </div>
           )}
         </div>

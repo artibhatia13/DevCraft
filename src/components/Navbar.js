@@ -1,12 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState, useRef } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { HashLink as HLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import { useAuth } from '../contexts/AuthContext'
-
+import { useAuth } from "../contexts/AuthContext";
 
 const Navbar = () => {
-  const { currentUser } = useAuth()
+  const { currentUser } = useAuth();
 
   const sidenavRef = useRef();
   const [sidenavInstance, setSidenavInstance] = useState(null);
@@ -19,17 +19,18 @@ const Navbar = () => {
     );
   }, []);
 
-  const links = currentUser!==null
-    ? [
-        { id: 1, Name: "Dashboard", to: "/dashboard" },
-        { id: 3, Name: "Play", to: "/play" },
-        { id: 4, Name: "Forum", to: "/forum" },
-        { id: 5, Name: "Profile", to: "/profile" },
-      ]
-    : [
-        { id: 1, Name: "Login", to: "/login" },
-        { id: 2, Name: "Signup", to: "/signup" },
-      ];
+  const links =
+    currentUser !== null
+      ? [
+          { id: 1, Name: "Dashboard", to: "/dashboard" },
+          { id: 3, Name: "Play", to: "/play" },
+          { id: 4, Name: "Forum", to: "/forum" },
+          { id: 5, Name: "Profile", to: "/profile" },
+        ]
+      : [
+          { id: 1, Name: "Login", to: "/login" },
+          { id: 2, Name: "Signup", to: "/signup" },
+        ];
 
   const handleSideNavClick = () => {
     sidenavInstance.close();
@@ -45,7 +46,7 @@ const Navbar = () => {
                 menu
               </i>
             </a>
-            <Link to="/" class="brand-logo left">
+            <Link to="/" className="brand-logo hide-on-med-and-down">
               ByteSpace
             </Link>
             <div

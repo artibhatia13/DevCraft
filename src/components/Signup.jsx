@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
 import { Alert } from '@material-ui/lab';
@@ -40,25 +40,28 @@ export default function Signup() {
         <Container>
             <h3>Sign Up</h3>
             {error && <Alert severity="error">{error}</Alert>}
-            <br/><br/>
+            <br /><br />
             <form onSubmit={handleSubmit} className="" autoComplete="off">
-                <TextField 
-                    type="email" 
-                    label="Email" 
-                    onChange={(e)=>setEmail(e.target.value)}
+                <TextField
+                    type="email"
+                    label="Email"
+                    onChange={(e) => setEmail(e.target.value)}
                     required
+                    inputProps={{ className: 'browser-default' }}
                 /><br /><br />
-                <TextField 
-                    type="password" 
-                    label="Password" 
+                <TextField
+                    type="password"
+                    label="Password"
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    inputProps={{ className: 'browser-default' }}
                 /><br /><br />
-                <TextField 
-                    type="password" 
-                    label="Confirm Password" 
+                <TextField
+                    type="password"
+                    label="Confirm Password"
                     onChange={(e) => setPassword2(e.target.value)}
                     required
+                    inputProps={{ className: 'browser-default' }}
                 /><br /><br />
                 <Button variant="contained" disabled={loading} type="submit" >Sign Up</Button>
             </form>
