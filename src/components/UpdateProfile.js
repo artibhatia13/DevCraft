@@ -18,7 +18,7 @@ export default function UpdateProfile() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (password !== password2) {
+    if (password2 && password !== password2) {
       return setError("Passwords do not match");
     }
     setError("");
@@ -35,8 +35,9 @@ export default function UpdateProfile() {
       .then(() => {
         history.push("/");
       })
-      .catch(() => {
-        setError("failed to update account");
+      .catch((err) => {
+        console.log(err);
+        setError(err.message);
       })
       .finally(() => {
         setLoading(false);

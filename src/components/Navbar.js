@@ -45,7 +45,7 @@ const Navbar = () => {
                 menu
               </i>
             </a>
-            <Link to="/" class="brand-logo left hide-on-med-and-down">
+            <Link to="/" className="brand-logo left hide-on-med-and-down">
               ByteSpace
             </Link>
             <div

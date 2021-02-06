@@ -36,7 +36,7 @@ const data = [
   },
   {
     id: 5,
-    title: "Sophisticated algoritms to make you cry",
+    title: "Sophisticated algorithms to make you cry",
     imgUrl: "https://picsum.photos/300",
     description: sampleText,
     creator: "John Doe",

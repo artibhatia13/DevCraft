@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { Button } from "@material-ui/core";
+import { Button, Container } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useAuth } from "../contexts/AuthContext";
 import CourseCard from "./CourseCard";
 
 export default function Profile() {
   const { currentUser, logout, allCourses } = useAuth();
-  const [error, setError] = useState("");
   const history = useHistory();
+
+  const [error, setError] = useState("");
+  const [courses, setCourses] = useState([]);
 
   async function handleLogout() {
     setError("");
@@ -20,14 +22,12 @@ export default function Profile() {
     }
   }
 
-  const [courses, setCourses] = useState(allCourses);
-
   useEffect(() => {
     setCourses(allCourses.filter((course) => course.enrolled));
   }, [allCourses]);
 
   return (
-    <div>
+    <Container>
       {error && <Alert severity="error">{error}</Alert>}
       <h3>Profile</h3>
       <h6>Email: {currentUser.email}</h6>
@@ -50,6 +50,6 @@ export default function Profile() {
           </div>
         )}
       </div>
-    </div>
+    </Container>
   );
 }
