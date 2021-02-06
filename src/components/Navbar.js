@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState, useRef } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { HashLink as HLink } from "react-router-hash-link";
@@ -40,12 +41,12 @@ const Navbar = () => {
       <div className="navbar-fixed  ">
         <nav className="nav-wrapper z-depth-3 white nav_img">
           <div className="container">
-            <a data-target="mobile-nav" className="sidenav-trigger">
+            <a href="#" data-target="mobile-nav" className="sidenav-trigger">
               <i className="material-icons" style={{ color: "#C33427" }}>
                 menu
               </i>
             </a>
-            <Link to="/" className="brand-logo left hide-on-med-and-down">
+            <Link to="/" className="brand-logo hide-on-med-and-down">
               ByteSpace
             </Link>
             <div

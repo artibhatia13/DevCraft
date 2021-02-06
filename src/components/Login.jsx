@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 import { Alert } from '@material-ui/lab';
 import { Container, TextField, Button } from '@material-ui/core/';
 import { useAuth } from '../contexts/AuthContext'
@@ -10,26 +9,23 @@ export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const { login } = useAuth()
-
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
-    const history = useHistory()
 
     async function handleSubmit(e) {
+
         e.preventDefault()
 
         try {
             setError("")
             setLoading(true)
             await login(email, password)
-            history.push("/")
         } catch {
             setError("Failed to Log in")
+        } finally {
+            setLoading(false)
         }
-
-        setLoading(false)
     }
-
 
     return (
         <Container>
