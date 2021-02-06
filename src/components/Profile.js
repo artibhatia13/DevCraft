@@ -6,17 +6,15 @@ import { Alert } from "@material-ui/lab";
 import { useAuth } from "../contexts/AuthContext";
 import CourseCard from "./CourseCard";
 
-export default function Dashboard() {
-  const { currentUser, logout, allCourses, setAllCourses } = useAuth();
+export default function Profile() {
+  const { currentUser, logout, allCourses } = useAuth();
   const [error, setError] = useState("");
   const history = useHistory();
 
   async function handleLogout() {
     setError("");
-
     try {
-      await logout();
-      history.push("/login");
+      logout().then(() => history.push("/login"));
     } catch {
       setError("Failed to Logout");
     }
@@ -27,11 +25,11 @@ export default function Dashboard() {
   useEffect(() => {
     setCourses(allCourses.filter((course) => course.enrolled));
   }, [allCourses]);
+
   return (
     <div>
-      <h1>home page</h1>
       {error && <Alert severity="error">{error}</Alert>}
-      <h6>Profile</h6>
+      <h3>Profile</h3>
       <h6>Email: {currentUser.email}</h6>
       <Link to="/updateprofile">Update Profile</Link>
       <br />
