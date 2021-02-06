@@ -56,6 +56,7 @@ export default function UpdateProfile() {
           label="Email"
           onChange={(e) => setEmail(e.target.value)}
           required
+          inputProps={{ className: "browser-default" }}
         />
         <br />
         <br />
@@ -64,6 +65,7 @@ export default function UpdateProfile() {
           label="Password"
           helperText="leave blank to keep the same"
           onChange={(e) => setPassword(e.target.value)}
+          inputProps={{ className: "browser-default" }}
         />
         <br />
         <br />
@@ -72,6 +74,7 @@ export default function UpdateProfile() {
           label="Confirm Password"
           helperText="leave blank to keep the same"
           onChange={(e) => setPassword2(e.target.value)}
+          inputProps={{ className: "browser-default" }}
         />
         <br />
         <br />
